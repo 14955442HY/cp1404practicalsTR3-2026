@@ -14,10 +14,13 @@ MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1.0
 MAX_PRICE = 1000.0
 INITIAL_PRICE = 10.0
+FILENAME = "stocking_price.txt"
 
 price = INITIAL_PRICE
 number_of_days = 0
-print(f"${price:,.2f}")
+out_file = open(FILENAME, "w")
+print(f"Starting price: ${price:,.2f}", file=out_file)
+
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
@@ -34,4 +37,5 @@ while MIN_PRICE <= price <= MAX_PRICE:
 
     price *= (1 + price_change)
     number_of_days += 1
-    print(f"On days {number_of_days} price is${price:,.2f}")
+    print(f"On days {number_of_days} price is${price:,.2f}", file=out_file)
+out_file.close()
