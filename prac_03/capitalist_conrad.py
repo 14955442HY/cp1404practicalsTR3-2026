@@ -9,9 +9,9 @@ The price should be displayed to the nearest cent (e.g. $33.59, not $33.59182329
 """
 import random
 
-MAX_INCREASE = 0.1  # 10%
+MAX_INCREASE = 0.175      # 10%
 MAX_DECREASE = 0.05  # 5%
-MIN_PRICE = 0.01
+MIN_PRICE = 1.0
 MAX_PRICE = 1000.0
 INITIAL_PRICE = 10.0
 
@@ -34,4 +34,4 @@ while MIN_PRICE <= price <= MAX_PRICE:
 
     price *= (1 + price_change)
     number_of_days += 1
-    print(f"On days {number_of_days} the price is${price:,.2f}")
+    print(f"On days {number_of_days} price is${price:,.2f}")
